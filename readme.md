@@ -156,3 +156,94 @@ ejecutarDespues(decirHola);
 // → Después.
 
 💡 Nota que pasamos decirHola sin paréntesis. Si escribiéramos decirHola() estaríamos ejecutándola en ese momento. Sin paréntesis, la pasamos como "receta para usar después".
+
+### 🟦 ¿Qué es un objeto?
+
+¿Qué es un objeto?
+Un array guarda datos en posiciones (0, 1, 2...). El problema es que no sabes qué significa cada posición:
+javascript// ¿Qué es el 25? ¿La edad? ¿El código postal?
+let persona = ["Ana", 25, "Madrid"];
+console.log(persona[1]); // → 25 ... ¿pero qué es?
+Un objeto soluciona eso guardando los datos con nombres descriptivos:
+javascriptlet persona = {
+    nombre: "Ana",
+    edad: 25,
+    ciudad: "Madrid"
+};
+
+console.log(persona.edad); // → 25  ✅ ahora sí queda claro
+
+Cómo crear un objeto
+javascriptlet persona = {
+//  ↑ nombre de la variable
+    nombre: "Ana",
+//  ↑       ↑
+//  clave   valor
+    edad: 25,
+    ciudad: "Madrid"
+};
+La estructura es siempre:
+javascriptlet objeto = {
+    clave: valor,
+    clave: valor,
+    clave: valor   // el último no lleva coma
+};
+
+Cómo acceder a los datos
+Hay dos formas:
+javascriptlet persona = {
+    nombre: "Ana",
+    edad: 25,
+    ciudad: "Madrid"
+};
+
+// Forma 1 — con punto (la más usada)
+console.log(persona.nombre); // → "Ana"
+console.log(persona.edad);   // → 25
+
+// Forma 2 — con corchetes (útil cuando la clave es dinámica)
+console.log(persona["nombre"]); // → "Ana"
+console.log(persona["edad"]);   // → 25
+
+Modificar valores
+javascriptlet persona = {
+    nombre: "Ana",
+    edad: 25
+};
+
+// Cambiar un valor existente
+persona.edad = 26;
+console.log(persona.edad); // → 26
+
+// Añadir una clave nueva
+persona.ciudad = "Madrid";
+console.log(persona); // → { nombre: "Ana", edad: 26, ciudad: "Madrid" }
+
+Objetos dentro de arrays
+Esto es muy común en proyectos reales. Una lista de objetos:
+javascriptlet personas = [
+    { nombre: "Ana",    edad: 25 },
+    { nombre: "Carlos", edad: 30 },
+    { nombre: "María",  edad: 28 }
+];
+
+// Acceder al segundo elemento, propiedad nombre
+console.log(personas[1].nombre); // → "Carlos"
+//                ↑        ↑
+//            posición    clave del objeto
+
+Objetos con funciones dentro (métodos)
+Un objeto también puede tener funciones. Cuando una función vive dentro de un objeto se llama método:
+javascriptlet persona = {
+    nombre: "Ana",
+    edad: 25,
+    saludar: () => {
+        console.log("Hola, soy Ana");
+    }
+};
+
+// Llamar al método
+persona.saludar(); // → "Hola, soy Ana"
+
+💡 Ya conoces métodos sin saberlo. console.log() es el método log del objeto console. document.querySelector() es el método querySelector del objeto document.
+
