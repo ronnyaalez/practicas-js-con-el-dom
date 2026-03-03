@@ -247,3 +247,30 @@ persona.saludar(); // → "Hola, soy Ana"
 
 💡 Ya conoces métodos sin saberlo. console.log() es el método log del objeto console. document.querySelector() es el método querySelector del objeto document.
 
+<!-- Ejemplo practico para el DOM -->
+html<div id="tarjeta"></div>
+<button id="botonMostrar">Mostrar persona</button>
+javascript// Un objeto con datos de una persona
+let persona = {
+    nombre: "Ana García",
+    edad: 25,
+    ciudad: "Madrid",
+    profesion: "Desarrolladora"
+};
+
+let tarjeta = document.querySelector('#tarjeta');
+let boton = document.querySelector('#botonMostrar');
+
+boton.addEventListener('click', () => {
+    // Usamos los datos del objeto para construir HTML
+    tarjeta.innerHTML = `
+        <h2>${persona.nombre}</h2>
+        <p>Edad: ${persona.edad}</p>
+        <p>Ciudad: ${persona.ciudad}</p>
+        <p>Profesión: ${persona.profesion}</p>
+    `;
+});
+
+💡 Fíjate que usé template strings con las comillas invertidas ` y ${} para meter variables dentro del texto. Es más limpio que usar + para concatenar.
+
+### 🟦
