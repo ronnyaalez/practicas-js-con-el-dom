@@ -88,14 +88,12 @@ Llámala con console.log para ver el resultado
       if (number > maximo) {
         maximo = number;
       }
-     
-    })
-    return maximo 
+    });
+    return maximo;
   }
 
-  console.log(LargeNumber(numeros))
+  console.log(LargeNumber(numeros));
 }
-
 
 /*
 
@@ -110,25 +108,67 @@ Explicación ejercicio 3 de el numero máximo.
 6. Al final devuelvo el máximo encontrado
 */
 
-
 /*
 
  Ejercicio 4
 Crea una función que reciba un array de strings y devuelva todos los elementos en mayúsculas.*/
 {
-    let frutas = ["manzana", "pera", "naranja"]
-// resultado → ["MANZANA", "PERA", "NARANJA"]
+  let frutas = ["manzana", "pera", "naranja"];
+  // resultado → ["MANZANA", "PERA", "NARANJA"]
 
-function Mayusculas (frutas : string[]) : string[] {
+  function Mayusculas(frutas: string[]): string[] {
+    let newArray = frutas.map(function (fruta) {
+      return fruta.toUpperCase();
+    });
 
-    let newArray = frutas.map(function(fruta){
+    return newArray;
+  }
+  console.log(Mayusculas(frutas));
+}
 
-        return fruta.toUpperCase()
-    })
+// Ejercicio 5
+// Crea una función que reciba un array de números y devuelva solo los números mayores que 10. Pista: esta vez necesitas filter en vez de map 😊
+
+let numeros = [3, 15, 7, 22, 8, 11];
+// resultado → [15, 22, 11]
+{
+  function biggerNumbers(numeros: number[]): number[] {
+let newArray = numeros.filter(function (numero)
+{return numero > 10}
+)
+
+return newArray
+
+
+  }
+  console.log(biggerNumbers(numeros))
+}
+
+
+/*
+map    → devuelve un array del MISMO tamaño pero transformado
+         [3, 15, 7, 22, 8, 11] → [6, 30, 14, 44, 16, 22] (todos x2)
+          6 elementos                6 elementos ← mismo tamaño
+
+filter → devuelve un array más PEQUEÑO solo con los que cumplen
+         [3, 15, 7, 22, 8, 11] → [15, 22, 11]
+          6 elementos               3 elementos ← más pequeño
+
+          map    → transforma TODOS, devuelve el mismo número de elementos
+filter → selecciona ALGUNOS, devuelve menos elementos */
+
+
+// 🏋️ Ejercicio 6
+// Crea una función que reciba un array de strings y devuelva solo las palabras que tengan más de 4 letras.
+// Pista: para saber cuántas letras tiene un string usa .length 😊
+
+let palabras = ["sol", "casa", "elefante", "mar", "ordenador"]
+// resultado → ["elefante", "ordenador"]
 {
 
-}
-}
+  const more4words = (palabras: string[]): string[] =>{
+let newArray = palabras.length
 
+  }
 }
 
